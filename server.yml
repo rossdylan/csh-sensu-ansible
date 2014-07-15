@@ -1,0 +1,5 @@
+---
+
+- hosts: sensu_server
+  roles:
+    - sensu_server

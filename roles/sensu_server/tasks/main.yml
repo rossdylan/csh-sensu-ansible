@@ -1,0 +1,15 @@
+---
+# Install the check json configs on the sensu server
+
+- name: Install Metric Configs
+  copy: src=roles/sensu_server/files/{{ item }} dest=/etc/sensu/conf.d/{{ item }}
+  with_items:
+      - load_metrics.json
+      - memory_metrics.json
+      - disk_usage_metrics.json
+
+- name: Resetart Sensu Services
+  service: name={{ item }} state=restarted
+  with_items:
+      - sensu-server
+      - sensu-api

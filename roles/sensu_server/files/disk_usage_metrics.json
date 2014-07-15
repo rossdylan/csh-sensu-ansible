@@ -1,0 +1,10 @@
+{
+    "checks": {
+        "disk_usage_metrics": {
+            "type": "metric",
+            "command": "disk-usage-metrics.rb",
+            "subscribers": [ "all" ],
+            "interval": 10
+        }
+    }
+}

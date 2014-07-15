@@ -1,0 +1,5 @@
+---
+# Main playbook for installing CSH sensu checks
+
+- include: server.yml
+- include: client.yml

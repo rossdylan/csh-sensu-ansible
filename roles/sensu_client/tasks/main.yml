@@ -1,0 +1,12 @@
+---
+# Install the actual check scripts
+
+- name: Install Metrics
+  copy: src=roles/sensu_client/files/{{ item }} dest=/etc/sensu/plugins/{{ item }} mode=755
+  with_items:
+    - load-metrics.rb
+    - disk-usage-metrics.rb
+    - memory-metrics.rb
+
+- name: Restart Sensu Client Service
+  service: name=sensu-client state=restarted

@@ -1,0 +1,3 @@
+- hosts: sensu_client
+  roles: 
+      - sensu_client
