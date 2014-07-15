@@ -2,7 +2,7 @@
 # Install the actual check scripts
 
 - name: Install Metrics
-  copy: src=roles/sensu_client/files/{{ item }} dest=/etc/sensu/plugins/{{ item }} mode=755
+  copy: src=roles/sensu_client/files/plugins/{{ item }} dest=/etc/sensu/plugins/{{ item }} mode=755
   with_items:
     - load-metrics.rb
     - disk-usage-metrics.rb
