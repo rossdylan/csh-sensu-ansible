@@ -1,9 +1,6 @@
 ---
 # Install the actual check scripts
 
-- name: Install Carrier-Pigeon (For irc notifications)
-  gem: name=carrier-pigeon state=present
-
 - name: Install Metrics
   copy: src=roles/sensu_client/files/plugins/{{ item }} dest=/etc/sensu/plugins/{{ item }} mode=755
   with_items:

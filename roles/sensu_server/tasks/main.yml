@@ -1,6 +1,9 @@
 ---
 # Install the check json configs on the sensu server
 
+- name: Install Carrier-Pigeon (For irc notifications)
+  gem: name=carrier-pigeon state=present
+
 - name: Install Metric Configs
   copy: src=roles/sensu_server/files/check_configs/{{ item }} dest=/etc/sensu/conf.d/{{ item }}
   with_items:
