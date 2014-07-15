@@ -2,6 +2,7 @@
     "checks": {
         "memory_metrics": {
             "type": "metric",
+            "handlers": [],
             "command": "memory-metrics.rb",
             "subscribers": [ "all" ],
             "interval": 10

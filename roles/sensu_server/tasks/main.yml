@@ -24,6 +24,9 @@
 - name: Install IRC Handler Config
   copy: src=roles/sensu_server/files/handler_configs/irc_handler.json dest=/etc/sensu/conf.d/irc_handler.json
 
+- name: Install Default Handler Config
+  copy: src=roles/sensu_server/files/handler_configs/default.json dest=/etc/sensu/conf.d/default.json.json
+
 
 - name: Resetart Sensu Services
   service: name={{ item }} state=restarted

@@ -4,6 +4,7 @@
             "type": "metric",
             "command": "disk-usage-metrics.rb",
             "subscribers": [ "all" ],
+            "handlers": [],
             "interval": 10
         }
     }
