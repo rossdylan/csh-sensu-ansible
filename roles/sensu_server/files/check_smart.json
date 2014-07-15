@@ -1,0 +1,10 @@
+{
+    "checks": {
+        "check_smart": {
+            "handlers": ["irc"],
+            "command": "/etc/sensu/plugins/check-smart.rb",
+            "subscribers": [ "physical" ],
+            "interval": 60
+        }
+    }
+}

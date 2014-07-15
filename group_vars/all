@@ -1,0 +1,2 @@
+irc_server: irc://nocbot:@irc.csh.rit.edu:6667/#csh-noc
+irc_ssl: false

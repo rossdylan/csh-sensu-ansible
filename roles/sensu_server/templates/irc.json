@@ -1,0 +1,6 @@
+{
+    "irc": {
+        "irc_server": "{{ irc_server }}",
+        "irc_ssl": {{ irc_ssl }}
+    }
+}

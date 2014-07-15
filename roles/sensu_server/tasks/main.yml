@@ -8,6 +8,23 @@
       - memory_metrics.json
       - disk_usage_metrics.json
 
+- name: Install Default Checks
+  copy: src=roles/sensu_server/files/{{ item }} dest=/etc/sensu/conf.d/{{ item }}
+  with_items:
+      - check_load.json
+      - check_mem.json
+      - check_smart.json
+
+- name: install IRC Handler
+  copy: src=roles/sensu_server/files/irc.rb dest=/etc/sensu/handlers/irc.rb mode=755
+
+- name: Install IRC Config
+  template: src=roles/sensu_server/templates/irc.json dest=/etc/sensu/conf.d/irc.json
+
+- name: Install IRC Handler Config
+  copy: src=roles/sensu_server/files/irc_handler.json dest=/etc/sensu/conf.d/irc_handler.json
+
+
 - name: Resetart Sensu Services
   service: name={{ item }} state=restarted
   with_items:

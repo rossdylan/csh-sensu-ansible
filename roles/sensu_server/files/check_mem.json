@@ -1,0 +1,10 @@
+{
+    "checks": {
+        "check_mem": {
+            "handlers": ["irc"],
+            "command": "/etc/sensu/plugins/check-mem.sh",
+            "subscribers": [ "all" ],
+            "interval": 60
+        }
+    }
+}
