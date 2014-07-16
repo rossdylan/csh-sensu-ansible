@@ -2,7 +2,7 @@
     "checks": {
         "load_metrics": {
             "type": "metric",
-            "command": "load-metrics.rb",
+            "command": "/usr/bin/ruby /etc/sensu/plugins/load-metrics.rb",
             "handlers": [],
             "subscribers": [ "all" ],
             "interval": 10

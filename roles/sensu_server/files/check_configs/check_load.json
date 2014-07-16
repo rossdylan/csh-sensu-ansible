@@ -2,7 +2,7 @@
     "checks": {
         "check_load": {
             "handlers": ["irc"],
-            "command": "/etc/sensu/plugins/check-load.rb -c 10,6,4 -w 5,4,3",
+            "command": "/usr/bin/ruby /etc/sensu/plugins/check-load.rb -c 10,6,4 -w 5,4,3",
             "subscribers": [ "all" ],
             "interval": 60
         }

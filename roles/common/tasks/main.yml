@@ -1,15 +1,29 @@
 ---
 # Install the actual check scripts
 
+- name: Remove old shitty ruby deps
+  gem: name={{ item }} state=absent
+  with_items:
+      - sensu-plugin
+      - json
+      - mixlib-cli
+
+- name: Install sensu-plugin and dependencies
+  gem: name={{ item }} state=present user_install=false
+  with_items:
+      - sensu-plugin
+      - mixlib-cli
+      - json
+
 - name: Install Metrics
-  copy: src=roles/sensu_client/files/plugins/{{ item }} dest=/etc/sensu/plugins/{{ item }} mode=755
+  copy: src=roles/common/files/plugins/{{ item }} dest=/etc/sensu/plugins/{{ item }} mode=755
   with_items:
     - load-metrics.rb
     - disk-usage-metrics.rb
     - memory-metrics.rb
 
 - name: Install Default Checks
-  copy: src=roles/sensu_client/files/plugins/{{ item }} dest=/etc/sensu/plugins/{{ item }} mode=755
+  copy: src=roles/common/files/plugins/{{ item }} dest=/etc/sensu/plugins/{{ item }} mode=755
   with_items:
       - check-load.rb
       - check-mem.sh

@@ -1,4 +1,4 @@
 - hosts: dns
   roles: 
-      - common
       - dns
+      - common

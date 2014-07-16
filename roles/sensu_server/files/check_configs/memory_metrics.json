@@ -3,7 +3,7 @@
         "memory_metrics": {
             "type": "metric",
             "handlers": [],
-            "command": "memory-metrics.rb",
+            "command": "/usr/bin/ruby /etc/sensu/plugins/memory-metrics.rb",
             "subscribers": [ "all" ],
             "interval": 10
         }
