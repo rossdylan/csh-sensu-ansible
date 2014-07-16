@@ -1,3 +1,1 @@
-- hosts: sensu_client
-  roles: 
-      - common
+- include: dns.yml

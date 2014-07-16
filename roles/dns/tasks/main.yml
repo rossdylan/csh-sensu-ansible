@@ -1,0 +1,5 @@
+---
+# Install dns specific check scripts
+
+- name: Install check-dns.rb
+  copy: src=roles/dns/files/check-dns.rb dest=/etc/sensu/plugins/check-dns.rb mode=755
