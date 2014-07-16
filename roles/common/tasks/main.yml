@@ -14,6 +14,7 @@
       - check-load.rb
       - check-mem.sh
       - check-smart.rb
+      - check-procs.rb
 
 - name: Restart Sensu Client Service
   service: name=sensu-client state=restarted

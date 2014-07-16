@@ -12,5 +12,10 @@
             "subscribers": [ "dns" ],
             "interval": 60
         }
+        "check_bind": {
+            "command": "/etc/sensu/plugins/check-procs -p named -C 1",
+            "subscribers": [ "dns" ],
+            "interval": 60
+        }
     }
 }
