@@ -2,7 +2,7 @@
     "checks": {
         "memory_metrics": {
             "type": "metric",
-            "handlers": [],
+            "handlers": ["graphite"],
             "command": "/usr/bin/ruby /etc/sensu/plugins/memory-metrics.rb",
             "subscribers": [ "all" ],
             "interval": 10

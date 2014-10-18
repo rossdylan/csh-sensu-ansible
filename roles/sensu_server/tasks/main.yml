@@ -31,6 +31,11 @@
 - name: Install Default Handler Config
   copy: src=roles/sensu_server/files/handler_configs/default.json dest=/etc/sensu/conf.d/default.json.json
 
+- name: Install Graphite mutator
+  copy: src=roles/sensu_server/files/mutators/graphite.rb dest=/etc/sensu/mutators/graphite.rb mode=755
+
+- name: Install Graphite Config
+  template: src=roles/sensu_server/templates/graphite.json dest=/etc/sensu/conf.d/graphite.json
 
 - name: Resetart Sensu Services
   service: name={{ item }} state=restarted

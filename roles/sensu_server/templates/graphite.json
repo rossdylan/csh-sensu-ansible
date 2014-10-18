@@ -1,0 +1,19 @@
+{
+    "mutators": {
+        "graphiteFormat": {
+            "command": "/etc/sensu/mutators/graphite.rb -r"
+        }
+    },
+    "handlers": {
+        "graphite": {
+            "type": "tcp",
+            "socket": {
+                "host": "{{ graphite_host }}",
+                "port": {{ graphite_port }}
+            },
+            "mutator": "graphiteFormat"
+        }
+    }
+
+}
+

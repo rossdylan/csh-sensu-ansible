@@ -3,7 +3,7 @@
         "load_metrics": {
             "type": "metric",
             "command": "/usr/bin/ruby /etc/sensu/plugins/load-metrics.rb",
-            "handlers": [],
+            "handlers": ["graphite"],
             "subscribers": [ "all" ],
             "interval": 10
         }

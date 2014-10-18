@@ -2,7 +2,7 @@
     "checks": {
         "check_mem": {
             "handlers": ["irc"],
-            "command": "/usr/bin/ruby /etc/sensu/plugins/check-mem.sh",
+            "command": "/usr/bin/bash /etc/sensu/plugins/check-mem.sh",
             "subscribers": [ "all" ],
             "interval": 60
         }
